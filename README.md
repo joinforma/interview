@@ -41,7 +41,7 @@ npm install
 npm start
 ```
 
-This app was generated using [create-react-app](https://github.com/facebook/create-react-app) for more information.
+This app was generated using [create-react-app](https://github.com/facebook/create-react-app).
 
 # Technology requirements
 
