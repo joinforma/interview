@@ -2,16 +2,14 @@
 
 Welcome to the Twic frontend coding challenge! Please read the following instructions carefully.
 
-**Your goal is to set up an application which enables the user to view and manage vendors.**
-
 # Contents
 
 - [Business need](#business-need)
 - [Use cases](#use-cases)
-- [Evaluation criteria](#evaluation-criteria)
-  - [Technology requirements](#technology-requirements)
-- [How to submit](#how-to-submit)
 - [How to run API server](#how-to-run-api-server)
+- [How to run React server](#how-to-run-react-server)
+- [Technology requirements](#technology-requirements)
+- [How to submit](#how-to-submit)
 - [Time limit](#time-limit)
 
 # Business need
@@ -27,33 +25,37 @@ The goal of this application is to allow the Twic team to view and manage vendor
   - Update the vendor name (should persist when the page is reloaded)
   - You may design it however you wish (just make it look usable). Don't worry, we don't expect you to be a professional designer.
 
-# Evaluation criteria
+# How to run API server
 
-## Technology requirements
+The boilerplate includes a small service for data fetching. The file `db.json` includes all the necessary data to achieve the goal. Please follow the steps below to start the server:
+
+```
+npm install
+npm run server
+```
+
+# How to run React server
+
+```
+npm install
+npm start
+```
+
+This app was generated using [create-react-app](https://github.com/facebook/create-react-app) for more information.
+
+# Technology requirements
 
 **React** and **JavaScript** are mandatory requirements. Apart from this, you can use any libraries.
 
 # How to submit
 
 - Clone this repository.
-- A RESTful API for `vendors` is provided with the challenge. To run, follow: [How to run API server](#how-to-run-api-server)
 - Complete your project as described above within your local repository.
 - Ensure everything you want to commit is committed before you bundle.
 - Create a git bundle: `git bundle create your_name.bundle --all`
 - Email the bundle file to your point of contact.
 
 **In order to be fair to all candidates, please refrain from sharing your solution on public repository hosting services such as GitHub and Bitbucket.**
-
-# How to run API server
-
-The boilerplate includes a small service for data fetching. The file `db.json` includes all the necessary data to achieve the goal. Please follow the steps below to start the server:
-
-```
-yarn or npm install .
-yarn server or npm run server
-```
-
-Check [json-server](https://github.com/typicode/json-server) for more information.
 
 # Time limit
 
