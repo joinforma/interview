@@ -34,6 +34,8 @@ npm install
 npm run server
 ```
 
+Check [json-server](https://github.com/typicode/json-server) for more information.
+
 # How to run React server
 
 ```
@@ -41,7 +43,7 @@ npm install
 npm start
 ```
 
-This app was generated using [create-react-app](https://github.com/facebook/create-react-app).
+This app was generated using [create-react-app](https://github.com/facebook/create-react-app)
 
 # Technology requirements
 
