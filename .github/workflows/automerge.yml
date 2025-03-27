@@ -21,13 +21,14 @@ on:
 jobs:
   automerge:
     runs-on: ubuntu-latest
-    if: ${{ github.event.pull_request.base.ref == 'main' }}
     steps:
-      - name: automerge
+      - if: ${{ github.event.pull_request.base.ref == 'main' }}
+        name: main
         uses: pascalgn/automerge-action@v0.16.4
         env:
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          GITHUB_TOKEN: "${{ secrets.FORMABOT_GITHUB_TOKEN }}"
           MERGE_LABELS: "ready to merge"
           MERGE_REMOVE_LABELS: "ready to merge"
           MERGE_METHOD: "squash"
           MERGE_REQUIRED_APPROVALS: "1"
+
