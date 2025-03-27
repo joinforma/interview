@@ -32,3 +32,4 @@ jobs:
           MERGE_METHOD: "squash"
           MERGE_REQUIRED_APPROVALS: "1"
 
+# Gitflow config is dynamically added if needed
