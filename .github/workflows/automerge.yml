@@ -18,10 +18,12 @@ on:
   check_suite:
     types:
       - completed
+  status: {}
 jobs:
   automerge:
     runs-on: ubuntu-latest
     steps:
+      - run: echo "${{ github.event.pull_request.base.ref }}"
       - if: ${{ github.event.pull_request.base.ref == 'main' }}
         name: main
         uses: pascalgn/automerge-action@v0.16.4
@@ -31,5 +33,3 @@ jobs:
           MERGE_REMOVE_LABELS: "ready to merge"
           MERGE_METHOD: "squash"
           MERGE_REQUIRED_APPROVALS: "1"
-
-# Gitflow config is dynamically added if needed
