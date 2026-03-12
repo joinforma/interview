@@ -22,13 +22,13 @@ on:
 jobs:
   automerge:
     runs-on: ubuntu-latest
+    if: >-
+      contains(github.event.pull_request.labels.*.name, 'ready to merge')
     steps:
       - if: ${{ github.event.pull_request.base.ref == 'main' }}
-        name: main
-        uses: pascalgn/automerge-action@v0.16.4
+        name: Enable auto-merge (main)
         env:
-          GITHUB_TOKEN: ${{ secrets.FORMABOT_GITHUB_TOKEN }}
-          MERGE_LABELS: ready to merge
-          MERGE_REMOVE_LABELS: ready to merge
-          MERGE_METHOD: squash
-          MERGE_REQUIRED_APPROVALS: '1'
+          GH_TOKEN: ${{ secrets.FORMABOT_GITHUB_TOKEN }}
+        run: |
+          gh pr merge --auto --squash "${{ github.event.pull_request.number }}" \
+            --repo "${{ github.repository }}"
