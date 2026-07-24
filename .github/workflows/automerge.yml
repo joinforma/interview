@@ -21,7 +21,7 @@ on:
   status: {}
 jobs:
   automerge:
-    runs-on: ubuntu-latest
+    runs-on: ${{ vars.CI_RUNNER || 'ubuntu-latest' }}
     if: >-
       contains(github.event.pull_request.labels.*.name, 'ready to merge')
     steps:
