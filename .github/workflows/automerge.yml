@@ -30,5 +30,13 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.FORMABOT_GITHUB_TOKEN }}
         run: |
-          gh pr merge --auto --squash "${{ github.event.pull_request.number }}" \
-            --repo "${{ github.repository }}"
+          for attempt in 1 2 3; do
+            if gh pr merge --auto --squash "${{ github.event.pull_request.number }}" \
+              --repo "${{ github.repository }}"; then
+              exit 0
+            fi
+            echo "auto-merge attempt $attempt failed, retrying in 15s"
+            sleep 15
+          done
+          echo "auto-merge did not succeed after 3 attempts" >&2
+          exit 1
